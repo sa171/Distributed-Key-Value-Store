@@ -1,0 +1,21 @@
+# fastapi-deployment.yaml
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fastapi-deployment
+spec:
+  replicas: 1 # Number of replicas/pods you want to run
+  selector:
+    matchLabels:
+      app: fastapi
+  template:
+    metadata:
+      labels:
+        app: fastapi
+    spec:
+      containers:
+      - name: fastapi-container
+        image: saurabhr17/kv-app-api:latest
+        ports:
+        - containerPort: 8000 # Port your FastAPI application is listening on

@@ -1,0 +1,14 @@
+INFO:     Will watch for changes in these directories: ['/Users/srudrawar/Documents/Projects/KeyValueStore/app']
+ERROR:    [Errno 48] Address already in use
+INFO:     Will watch for changes in these directories: ['/Users/srudrawar/Documents/Projects/KeyValueStore/app']
+ERROR:    [Errno 48] Address already in use
+INFO:     Will watch for changes in these directories: ['/Users/srudrawar/Documents/Projects/KeyValueStore/app']
+ERROR:    [Errno 48] Address already in use
+INFO:     Will watch for changes in these directories: ['/Users/srudrawar/Documents/Projects/KeyValueStore/app']
+INFO:     Uvicorn running on http://127.0.0.1:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [33974] using StatReload
+INFO:     Started server process [33976]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     127.0.0.1:64573 - "GET / HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64573 - "GET /favicon.ico HTTP/1.1" 404 Not Found

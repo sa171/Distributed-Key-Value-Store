@@ -3,11 +3,12 @@ from pydantic import BaseModel
 from huey import RedisHuey
 from huey.exceptions import HueyException
 import redis
+from tasks import create_item, read_item, update_item, delete_item
 
 app = FastAPI()
 #redis-service
-redis_client = redis.Redis(host="redis-service", port=6379, db=0)
-huey_queue = RedisHuey('my-queue', host="localhost", port=6379)
+redis_client = redis.Redis(host="35.197.123.183", port=6379, db=0)
+huey_queue = RedisHuey('my-queue', host="35.197.123.183", port=6379)
 
 class Item(BaseModel):
     key: str
@@ -46,19 +47,19 @@ async def read(key:str):
     except HueyException:
         return "Task took too long to complete, try again!"
 
-@huey_queue.task()
-def create_item(key: str, value: str):
-    redis_client.set(key,value)
+# @huey_queue.task()
+# def create_item(key: str, value: str):
+#     redis_client.set(key,value)
 
-@huey_queue.task()
-def update_item(key: str, value: str):
-    redis_client.set(key,value);    
+# @huey_queue.task()
+# def update_item(key: str, value: str):
+#     redis_client.set(key,value);    
 
-@huey_queue.task()
-def read_item(key: str):
-    return redis_client.get(key);    
+# @huey_queue.task()
+# def read_item(key: str):
+#     return redis_client.get(key);    
 
-@huey_queue.task()
-def delete_item(key: str):
-    redis_client.delete(key) 
+# @huey_queue.task()
+# def delete_item(key: str):
+#     redis_client.delete(key) 
 

@@ -1,5 +1,0 @@
-pydantic
-uvicorn
-fastapi
-huey
-redis

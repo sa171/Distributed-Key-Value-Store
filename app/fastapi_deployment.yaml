@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: fastapi-container
-        image: saurabhr17/kv-app-api:latest
+        image: sidpalas/k8s-getting-started:0.0.1
         ports:
-        - containerPort: 8000 # Port your FastAPI application is listening on
+        - containerPort: 80 # Port your FastAPI application is listening on
